@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Patterns", "Patterns\Patterns.pyproj", "{B0DF2092-F4D9-482C-8F0E-8F07DE04402E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0DF2092-F4D9-482C-8F0E-8F07DE04402E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0DF2092-F4D9-482C-8F0E-8F07DE04402E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {925DAA2F-8094-450E-ACF1-60CAC9913689}
+	EndGlobalSection
+EndGlobal
