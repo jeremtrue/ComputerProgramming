@@ -1,4 +1,3 @@
-import classes as c
-
-print(c.game.player.health)
-
+from classes import Game
+game = Game()
+game.init()

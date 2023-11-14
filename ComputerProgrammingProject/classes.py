@@ -1,5 +1,12 @@
-class game:
-    class player:
+class Game:
+    def __init__(self):
+        self.player = self.Player()
+    
+    class initialize:
+        def __init__(self):
+            self.name = input("What is your characters name?")
+
+    class Player():
         def __init__(self):
             self.health = 0
             self.weapons = []
@@ -8,4 +15,7 @@ class game:
             self.points = 0
             self.level = 0
 
+
+
             
+
