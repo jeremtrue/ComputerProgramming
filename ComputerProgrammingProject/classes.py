@@ -1,4 +1,5 @@
 import os
+import random as rand
 
 class Game:
     def __init__(self):
@@ -12,6 +13,9 @@ class Game:
             Game.Start(self.name)
         def genphrases():
             enames = ['Gorlock The Destoryer', 'Bob the Destoryer', 'Totaly Inncent Person']
+            gstart = ['You awaken in a dark cave.',
+                      'You wake up in the back of a wagon.',
+                      'You burst awake to find yourself in the middle of a dark room.']
 
 
     class Save:
@@ -34,7 +38,7 @@ class Game:
             self.level = 0
     
     class Start:
-        
+        print(rand.gstart)
 
 
 
