@@ -1,3 +1,3 @@
 from classes import Game
 game = Game()
-game.init()
+game.Initialize()

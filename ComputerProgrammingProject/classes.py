@@ -2,9 +2,15 @@ class Game:
     def __init__(self):
         self.player = self.Player()
     
-    class initialize:
+    class Initialize:
         def __init__(self):
             self.name = input("What is your characters name?")
+            self.ifsave = input("Do you have a save file?")
+
+    class Loadsave:
+        def __init__(self):
+            self.save = true
+
 
     class Player():
         def __init__(self):
