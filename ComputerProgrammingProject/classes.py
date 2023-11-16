@@ -4,12 +4,16 @@ import random as rand
 
 class Game:
     def __init__(self):
+        self.firsttime = 0
         self.player = self.Player()
+
     
     class Initialize:
         def __init__(self):
             self.name = input("What is your characters name?")
-            self.getphrases()
+            phrases = self.getphrases()
+            enename = self.getnames()
+
         def getphrases(self):
             idk2 = ['You awaken in a dark cave.',
                     'You wake up in the back of a wagon.',
@@ -37,9 +41,8 @@ class Game:
             self.points = 0
             self.level = 0
     
-    class Start:
-        def __init__(self):
-            Game.Initialize.getphrases
-            self = self()
-        def gamefunc(self):
-            print(Game.Initialize.getphrases())
+ #   class Start:
+  #      def __init__(self):
+  #          Game.Initialize.getphrases()
+   #     def gamefunc():
+ #           print(Game.Initialize.situation1)
