@@ -1,8 +1,9 @@
 from classes import Game
 game = Game()
+game.save = Game.Save()
 #game.Save.Load
 game.Initialize()
-if firsttime == 0:
+if game.save.Exists.first() == 0:
     def printdir():
         print('How to play:')
     print('First you would enter your name')
@@ -14,5 +15,6 @@ if firsttime == 0:
         print('Great! good luck')
     else:
         print('Well then, you see, I have no clue. good luck!')
+    printdir()
     
     

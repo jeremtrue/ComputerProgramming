@@ -4,7 +4,6 @@ import random as rand
 
 class Game:
     def __init__(self):
-        self.firsttime = 0
         self.player = self.Player()
 
     
@@ -24,9 +23,17 @@ class Game:
              self.monstername = rand.choice(idk1)
 
     class Save:
+        def __init__(self):
+            self.exists = self.Exists()
         class Exists:
             def __init__(self):
-                pass #change this too
+                self.first = 0 
+                self.health = 0
+                self.damage = 0
+                self.level = 0
+                self.enelost = 0
+                self.enewon = 0
+                self.inventory = 0
 
         class Load:
             def __init__(self):
