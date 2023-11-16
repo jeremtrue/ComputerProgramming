@@ -10,14 +10,14 @@ class Game:
         def __init__(self):
             self.name = input("What is your characters name?")
             self.getphrases()
-            Game.Start()
         def getphrases(self):
-            idk1 = ['Gorlock The Destoryer', 'Bob the Destoryer', 'Totaly Inncent Person']
             idk2 = ['You awaken in a dark cave.',
                     'You wake up in the back of a wagon.',
                     'You burst awake to find yourself in the middle of a dark room.']
-            self.monstername = rand.choice(idk1)
             self.situation1 = rand.choice(idk2)
+        def getnames(self):
+             idk1 = ['Gorlock The Destoryer', 'Bob the Destoryer', 'Totally Inncent Person']
+             self.monstername = rand.choice(idk1)
 
     class Save:
         class Exists:
@@ -38,5 +38,8 @@ class Game:
             self.level = 0
     
     class Start:
+        def __init__(self):
+            Game.Initialize.getphrases
+            self = self()
         def gamefunc(self):
-            print(self.Initialize.situation1)
+            print(Game.Initialize.getphrases())
