@@ -25,6 +25,7 @@ class Game:
     class Save:
         def __init__(self):
             self.exists = self.Exists()
+            self.first = 0
         class Exists:
             def __init__(self):
                 self.first = 0 
