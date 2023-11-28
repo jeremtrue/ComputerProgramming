@@ -4,7 +4,7 @@ import os
 
 class Game:
     def __init__(self):
-        pass
+        self.initialize = Initialize()
 
     def printdir(self):
         print('\nHow to play:')
@@ -18,12 +18,17 @@ class Game:
         else:
             print('Well then, you see, I have no clue. Good luck!\n')
 
+    def gamestart(self):
+        #starting the journey
+        print("WORKS")
+
 class Initialize:
     def __init__(self):
         # Instantiate the Game class
         self.game = Game()
-        self.dirque()
-        self.name = self.getcharname()
+#        self.dirque()
+#        self.name = self.getcharname()
+        self.game.gamestart()
 
     def getcharname(self):
         name = str(input("What is your Character's name? "))
