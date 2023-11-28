@@ -1,3 +1,5 @@
-need to start the game
+Needing to coninue the game
 
-it does initializes twice and go over the printdir and asks all the beigning questins twice. It should be once
+get saves working
+
+add difficulty based on level

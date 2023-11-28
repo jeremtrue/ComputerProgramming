@@ -1,10 +1,13 @@
 import json
 import random as rand
 
-class Game:
-    def __init__(self, initialize):
-        self.initialize = initialize
-    
+class Initialize:
+    def __init__(self):
+        # Instantiate the Game class
+        self.name = self.getcharname()
+        self.dirque()
+        
+
     def printdir(self):
         print('\nHow to play:')
         print('First, you would enter your name')
@@ -16,17 +19,6 @@ class Game:
             print('Great! Good luck')
         else:
             print('Well then, you see, I have no clue. Good luck!\n')
-
-    def gamestart(self):
-        # Starting the journey
-        print("WORKS")
-
-class Initialize:
-    def __init__(self):
-        # Instantiate the Game class
-        self.game = Game(self)
-        self.dirque()
-        self.name = self.getcharname()
 
     def getcharname(self):
         name = str(input("What is your Character's name? "))
@@ -45,10 +37,18 @@ class Initialize:
     def dirque(self):
         firstque = input('\nDo you need instructions? y/n: ')
         if firstque == 'y' or firstque == 'yes':
-            self.game.printdir()
+            self.printdir()
         else:
             print('\nWell then, you see, I think you need them!')
-            self.game.printdir()
+            self.printdir()
+
+class Game(Initialize):
+    def __init__(self):
+        self.gamestart()
+    
+    def gamestart(self):
+        # Starting the journey
+        print(self.getphrases())
 
 class Save:
     def __init__(self):
@@ -88,4 +88,3 @@ class Saves:
             return None, None, None, None, None, None
 
 saves = Saves()
-initialize = Initialize()

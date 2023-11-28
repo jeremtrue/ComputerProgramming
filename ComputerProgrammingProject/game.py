@@ -1,5 +1,5 @@
 #import
 import classes
 #RUN IT
-classes.Initialize()
-    
+c = classes.Initialize()
+g = classes.Game()
