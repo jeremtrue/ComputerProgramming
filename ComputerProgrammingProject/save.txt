@@ -1,8 +1,0 @@
-name:Jeremy
-first:0
-health:100
-damage:15
-level:0
-enelost:0
-enewon:0
-inventory:null

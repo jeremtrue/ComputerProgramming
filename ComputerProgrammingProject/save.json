@@ -1,0 +1,15 @@
+{
+  "character": {
+    "name": "Jeremy",
+    "health": 100,
+    "level": 0,
+    "damage": 10,
+    "combat": {
+      "enelost": 2,
+      "enewon": 5
+    },
+    "inventory": {
+      "inventory": ""
+    }
+  }
+}
