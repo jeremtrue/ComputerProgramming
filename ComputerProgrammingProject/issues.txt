@@ -1,0 +1,3 @@
+need to start the game
+
+it does initializes twice and go over the printdir and asks all the beigning questins twice. It should be once
