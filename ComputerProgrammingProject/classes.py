@@ -21,13 +21,15 @@ class Initialize:
             print('Well then, you see, I have no clue. Good luck!\n')
 
     def getcharname(self):
-        name = str(input("What is your Character's name? "))
+        name = str(input("\nWhat is your Character's name? "))
         return name
 
     def getphrases(self):
-        idk2 = ['You awaken in a dark cave.',
-                'You wake up in the back of a wagon.',
-                'You burst awake to find yourself in the middle of a dark room.']
+        idk2 = [
+            ['You awaken in a dark cave.', ],
+            'You wake up in the back of a wagon.',
+            'You burst awake to find yourself in the middle of a dark room.'
+            ]
         return rand.choice(idk2)
 
     def getnames(self):
@@ -42,6 +44,12 @@ class Initialize:
             print('\nWell then, you see, I think you need them!')
             self.printdir()
 
+    def option(o1, o2, o3):
+        print('\nPick you move.')
+        print(f'1\t{o1}')
+        print(f'2\t{o2}')
+        print(f'3\t{o3}')
+
 class Game(Initialize):
     def __init__(self):
         self.gamestart()
@@ -49,18 +57,23 @@ class Game(Initialize):
     def gamestart(self):
         # Starting the journey
         print(self.getphrases())
+        Player.level += 1
+        Initialize.option('', 'two', 'three')
+        
+class Player:
+    damage = 0
+    first = 1
+    health = 0
+    level = 0
+    enelost = 0
+    enewon = 0
+    inventory = []
+    levelinprog = 0
+    name = ""
 
-class Save:
     def __init__(self):
-        self.damage = 0
-        self.first = 1
-        self.health = 0
-        self.level = 0
-        self.enelost = 0
-        self.enewon = 0
-        self.inventory = []
-        self.levelinprog = 0
-        self.name = ""
+        pass
+
 
 class Saves:
     def __init__(self):

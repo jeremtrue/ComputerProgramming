@@ -1,5 +1,3 @@
-Needing to coninue the game
+remember 2daraay[0][0]
 
-get saves working
-
-add difficulty based on level
+fix ther get phrases to make a 2d array for all the things. 
