@@ -4,6 +4,7 @@
     "health": 100,
     "level": 0,
     "damage": 10,
+    "first": 1,
     "combat": {
       "enelost": 2,
       "enewon": 5
