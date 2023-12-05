@@ -42,6 +42,22 @@ class Initialize:
         else:
             print('\nWell then, you see, I think you need them!')
             self.printdir()
+    
+    def agony(x):
+            while x > 0:
+                print('\nthinking......')
+                print('thinking.....')
+                print('thinking.....whoah........')
+                print('thinking.......')
+                print('thinking...\tthinking')
+                print('\t\t\tthinking')
+                print('\t\tthinking')
+                print('\tthinking')
+                x -= 1
+            if x == 0:
+                print('Thinking...............')
+                print('ow')
+                
 
     def option(o1, o2, o3):
         print('\nPick you move.')
@@ -49,13 +65,14 @@ class Initialize:
         print(f'2\t{o2}')
         print(f'3\t{o3}')
 
-    def story(part):
+    def story(self, part):
         if part == 1.1:
             print('You jump around with joy, When all of a sudden.... You start to hear some voices in the distant. ')
         elif part == 1.2:
             print('You get up cautially, you notice a dimly lit light in the background. ')
         elif part == 1.3:
             print('You lay there, thinking...thinking....thinking...')
+            self.agony(rand(3, 10))
         elif part == 2.1:
             print('You scream, and jump out of the wagon. You land harshly on a dirt trail. ')
         elif part == 2.2:
@@ -68,19 +85,6 @@ class Initialize:
             print('Your walking around. Unsure what to do next. ')
         elif part == 3.3:
             print('You sit there in silence. A door bursts open and footsteps fill the silence. ')
-
-        def agony(x):
-            while x > 0:
-                print('\nthinking......')
-                print('thinking.....')
-                print('thinking.....whoah........')
-                print('thinking.......')
-                print('thinking...\tthinking')
-                print('\t\t\tthinking')
-                print('\t\tthinking')
-                print('\tthinking')
-            if x == 0:
-                
 
 
 class Game(Initialize):
@@ -103,7 +107,7 @@ class Game(Initialize):
                 if choice == 1:
                     print("You get quite and hide. Unsure what to do next.")
                 elif choice == 2:
-                    print("You jerk towards the voices. They are saying something about the expiriment?")
+                    print("You jerk towards the voices. They are saying something about the 'expiriment'?")
                 elif choice == 3:
                     print("3")
             elif choice == 2:
