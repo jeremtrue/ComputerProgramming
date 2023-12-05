@@ -1,7 +1,6 @@
 import json
 import random as rand
-import time 
-
+import time                                                                            
 class Initialize:
     def __init__(self):
         # Instantiate the Game class
@@ -69,6 +68,19 @@ class Initialize:
             print('Your walking around. Unsure what to do next. ')
         elif part == 3.3:
             print('You sit there in silence. A door bursts open and footsteps fill the silence. ')
+
+        def agony(x):
+            while x > 0:
+                print('\nthinking......')
+                print('thinking.....')
+                print('thinking.....whoah........')
+                print('thinking.......')
+                print('thinking...\tthinking')
+                print('\t\t\tthinking')
+                print('\t\tthinking')
+                print('\tthinking')
+            if x == 0:
+                
 
 
 class Game(Initialize):
