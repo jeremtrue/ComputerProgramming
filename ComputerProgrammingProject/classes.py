@@ -1,5 +1,6 @@
 import json
 import random as rand
+import time 
 
 class Initialize:
     def __init__(self):
@@ -26,8 +27,8 @@ class Initialize:
     def getphrases():
         idk2 = [
             ['You awaken in a dark cave.', 'Get up and jump around with joy.', 'Get up cautiasly', 'Lay there in agony.', 1],
-            ['You wake up in the back of a wagon.', 'You scream and jump out.', 'Wake up but sit there silently.', 'Sit up and look around.', 2],
-            ['You burst awake to find yourself in the middle of a dark room.', 'Sit there and look around.', 'Get up and walk around.', 'Wait to see what happens.', 3] 
+            #['You wake up in the back of a wagon.', 'You scream and jump out.', 'Wake up but sit there silently.', 'Sit up and look around.', 2],
+            #['You burst awake to find yourself in the middle of a dark room.', 'Sit there and look around.', 'Get up and walk around.', 'Wait to see what happens.', 3] 
             ]
         return rand.choice(idk2)
 
@@ -51,23 +52,23 @@ class Initialize:
 
     def story(part):
         if part == 1.1:
-            print('You jump around with joy, You start to hear some voices in the distant. ')
-        if part == 1.2:
+            print('You jump around with joy, When all of a sudden.... You start to hear some voices in the distant. ')
+        elif part == 1.2:
             print('You get up cautially, you notice a dimly lit light in the background. ')
-        if part == 1.3:
+        elif part == 1.3:
             print('You lay there, thinking...thinking....thinking...')
-        if part == 2.1:
+        elif part == 2.1:
             print('You scream, and jump out of the wagon. You land harshly on a dirt trail. ')
-        if part == 2.2:
+        elif part == 2.2:
             print('You burst awake, not making a peep, you start obserbing your surroundings. ')
-        if part == 2.3:
+        elif part == 2.3:
             print('You wake up and slowly sit up, unaware of whats happening. Your trying to process it all. ')
-        if part == 3.1:
+        elif part == 3.1:
             print('Look around.')
-        if part == 3.2:
-            print('Dance to the macerena. ')
-        if part == 3.3:
-            print('Get up and look around. ')
+        elif part == 3.2:
+            print('Your walking around. Unsure what to do next. ')
+        elif part == 3.3:
+            print('You sit there in silence. A door bursts open and footsteps fill the silence. ')
 
 
 class Game(Initialize):
@@ -85,8 +86,14 @@ class Game(Initialize):
         if phrase[4] == 1:
             if choice == 1:
                 Initialize.story(1.1)
-                Initialize.option('Get quite and hide.', 'stop talking and observe', 'Start yelling at them to help you.')
-                choice = int(input('Whats your choice? '))
+                Initialize.option('Get quite and hide.', 'Stay somewhat still and observe ', 'Start yelling at them to help you.')
+                choice = int(input('Whats your choice? ')) 
+                if choice == 1:
+                    print("You get quite and hide. Unsure what to do next.")
+                elif choice == 2:
+                    print("You jerk towards the voices. They are saying something about the expiriment?")
+                elif choice == 3:
+                    print("3")
             elif choice == 2:
                 Initialize.story(1.2)
             elif choice == 3:
