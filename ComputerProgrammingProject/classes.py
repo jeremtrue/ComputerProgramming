@@ -13,7 +13,6 @@ class Initialize:
         print('Next, you would start your journey.')
         print('When you are asked a yes or no question, just type y/n or yes/no.')
         print('When you are asked to input a number from a chart, just type the number next to your answer.\n')
-        time.sleep(1)
         firstque = input('Do you understand? y/n: ')
         if firstque == 'y' or firstque == 'yes':
             print('Great! Good luck')
@@ -74,7 +73,6 @@ class Initialize:
         print(f'1\t{o1}')
         print(f'2\t{o2}')
         print(f'3\t{o3}\n')
-        time.sleep(2)
 
     def story(self, part):
         if part == 1.1:
@@ -119,15 +117,15 @@ class Game(Initialize):
                 if choice == 1:
                     print("\nYou get quite and hide. Unsure what to do next.\n They are looking around for you.")
                     Initialize.option('Try and talk to them.', 'SCREAM', 'Book it for the door')
-                    choice = input('What is your choice? ')
+                    choice = 1#input('What is your choice? ')
                     if choice == 1:
                         print('You try and talk to them.... \n they all turn to look at you \n "Who are you guys?" \n They list their names')
                         print("They all looked at each other and said")
-                        idk = Initialize.getnames
-                        print(idk[0],idk[1],idk[2],idk[3])
-                    if choice == 2:
+                        idk = Initialize.getnames(self)
+                        print(f'{idk[0]}, {idk[1]}, {idk[2]}, {idk[3]}')
+                    elif choice == 2:
                         pass
-                    if choice == 3:
+                    elif choice == 3:
                         pass
                 elif choice == 2:
                     print("You jerk towards the voices. They are saying something about the 'expiriment'?")
