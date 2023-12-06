@@ -9,15 +9,16 @@ class Initialize:
 
     def printdir(self):
         print('\nHow to play:')
-        print('First, you would enter your name')
+        print('First, you would enter your name (you already did this)')
         print('Next, you would start your journey.')
         print('When you are asked a yes or no question, just type y/n or yes/no.')
         print('When you are asked to input a number from a chart, just type the number next to your answer.\n')
+        time.sleep(3)
         firstque = input('Do you understand? y/n: ')
         if firstque == 'y' or firstque == 'yes':
             print('Great! Good luck')
         else:
-            print('Well then, you see, I have no clue. Good luck!\n')
+            print('\nWell then, you see, I have no clue. Good luck!')
 
     def getcharname(self):
         name = str(input("\nWhat is your Character's name? "))
@@ -37,26 +38,35 @@ class Initialize:
 
     def dirque(self):
         firstque = input('\nDo you need instructions? y/n: ')
+        time.sleep(1)
         if firstque == 'y' or firstque == 'yes':
             self.printdir()
         else:
             print('\nWell then, you see, I think you need them!')
             self.printdir()
     
-    def agony(x):
+    def agony(self, x):
             while x > 0:
                 print('\nthinking......')
+                time.sleep((rand.randint(0,3)))
                 print('thinking.....')
+                time.sleep((rand.randint(0,4)))
                 print('thinking.....whoah........')
+                time.sleep((rand.randint(0,3)))
                 print('thinking.......')
                 print('thinking...\tthinking')
+                time.sleep((rand.randint(0,4)))
                 print('\t\t\tthinking')
+                time.sleep(1)
                 print('\t\tthinking')
+                time.sleep(1)
                 print('\tthinking')
+                time.sleep(1)
                 x -= 1
             if x == 0:
                 print('Thinking...............')
-                print('ow')
+                time.sleep((rand.randint(2,3)))
+                print('\now')
                 
 
     def option(o1, o2, o3):
@@ -71,8 +81,8 @@ class Initialize:
         elif part == 1.2:
             print('You get up cautially, you notice a dimly lit light in the background. ')
         elif part == 1.3:
-            print('You lay there, thinking...thinking....thinking...')
-            self.agony(rand(3, 10))
+            print('You lay there,   gasp   ,  thinking...thinking....thinking...')
+            self.agony(5)
         elif part == 2.1:
             print('You scream, and jump out of the wagon. You land harshly on a dirt trail. ')
         elif part == 2.2:
@@ -86,6 +96,7 @@ class Initialize:
         elif part == 3.3:
             print('You sit there in silence. A door bursts open and footsteps fill the silence. ')
 
+#time.sleep(1)
 
 class Game(Initialize):
     def __init__(self):
@@ -94,14 +105,13 @@ class Game(Initialize):
     def gamestart(self):
         # Starting the journey
         phrase = Initialize.getphrases()
-        print(f'\n')
         print(phrase[0])
         Player.level += 1
         Initialize.option(phrase[1], phrase[2], phrase[3])
         choice = int(input('\nWhat is your choice? '))
         if phrase[4] == 1:
             if choice == 1:
-                Initialize.story(1.1)
+                Initialize.story(self, 1.1)
                 Initialize.option('Get quite and hide.', 'Stay somewhat still and observe ', 'Start yelling at them to help you.')
                 choice = int(input('Whats your choice? ')) 
                 if choice == 1:
@@ -113,7 +123,7 @@ class Game(Initialize):
             elif choice == 2:
                 Initialize.story(1.2)
             elif choice == 3:
-                Initialize.story(1.3)
+                Initialize.story(self, 1.3)
         if phrase[4] == 2:
             if choice == 1:
                 Initialize.story(2.1)
