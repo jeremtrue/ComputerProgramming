@@ -13,7 +13,7 @@ class Initialize:
         print('Next, you would start your journey.')
         print('When you are asked a yes or no question, just type y/n or yes/no.')
         print('When you are asked to input a number from a chart, just type the number next to your answer.\n')
-        time.sleep(3)
+        time.sleep(1)
         firstque = input('Do you understand? y/n: ')
         if firstque == 'y' or firstque == 'yes':
             print('Great! Good luck')
@@ -33,12 +33,12 @@ class Initialize:
         return rand.choice(idk2)
 
     def getnames(self):
-        idk1 = ['Gorlock The Destroyer', 'Bob the Destroyer', 'Totally Innocent Person']
-        return rand.choice(idk1)
+        idk1 = ['Gorlock The Destroyer', 'Bob the Destroyer', 'Totally Innocent Person', 'Gorrel the Giant']
+        return idk1
 
     def dirque(self):
         firstque = input('\nDo you need instructions? y/n: ')
-        time.sleep(1)
+        time.sleep(0.5)
         if firstque == 'y' or firstque == 'yes':
             self.printdir()
         else:
@@ -73,7 +73,8 @@ class Initialize:
         print('\nPick you move.')
         print(f'1\t{o1}')
         print(f'2\t{o2}')
-        print(f'3\t{o3}')
+        print(f'3\t{o3}\n')
+        time.sleep(2)
 
     def story(self, part):
         if part == 1.1:
@@ -82,7 +83,7 @@ class Initialize:
             print('You get up cautially, you notice a dimly lit light in the background. ')
         elif part == 1.3:
             print('You lay there,   gasp   ,  thinking...thinking....thinking...')
-            self.agony(5)
+            self.agony(1)
         elif part == 2.1:
             print('You scream, and jump out of the wagon. You land harshly on a dirt trail. ')
         elif part == 2.2:
@@ -108,14 +109,26 @@ class Game(Initialize):
         print(phrase[0])
         Player.level += 1
         Initialize.option(phrase[1], phrase[2], phrase[3])
-        choice = int(input('\nWhat is your choice? '))
+        choice = int(input('What is your choice? '))
+        print("\n")
         if phrase[4] == 1:
             if choice == 1:
                 Initialize.story(self, 1.1)
                 Initialize.option('Get quite and hide.', 'Stay somewhat still and observe ', 'Start yelling at them to help you.')
                 choice = int(input('Whats your choice? ')) 
                 if choice == 1:
-                    print("You get quite and hide. Unsure what to do next.")
+                    print("\nYou get quite and hide. Unsure what to do next.\n They are looking around for you.")
+                    Initialize.option('Try and talk to them.', 'SCREAM', 'Book it for the door')
+                    choice = input('What is your choice? ')
+                    if choice == 1:
+                        print('You try and talk to them.... \n they all turn to look at you \n "Who are you guys?" \n They list their names')
+                        print("They all looked at each other and said")
+                        idk = Initialize.getnames
+                        print(idk[0],idk[1],idk[2],idk[3])
+                    if choice == 2:
+                        pass
+                    if choice == 3:
+                        pass
                 elif choice == 2:
                     print("You jerk towards the voices. They are saying something about the 'expiriment'?")
                 elif choice == 3:
