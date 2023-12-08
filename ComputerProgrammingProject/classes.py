@@ -69,10 +69,18 @@ class Initialize:
                 
 
     def option(o1, o2, o3):
-        print('\nPick you move.')
+        print('\nPick your move.')
         print(f'1\t{o1}')
         print(f'2\t{o2}')
         print(f'3\t{o3}\n')
+        def choice():
+            choice = input("What is your choice")
+            if choice == 1 or choice == 2 or choice == 3:
+                return choice
+            else:
+                print('uhhh please pick again')
+            
+        
 
     def story(self, part):
         if part == 1.1:
@@ -100,6 +108,11 @@ class Initialize:
 class Game(Initialize):
     def __init__(self):
         self.gamestart()
+
+    def die(reason):
+        print('Uh Oh, you died. Thats unfortunates.')
+        print('What will we do now?')
+
     
     def gamestart(self):
         # Starting the journey
@@ -117,16 +130,28 @@ class Game(Initialize):
                 if choice == 1:
                     print("\nYou get quite and hide. Unsure what to do next.\n They are looking around for you.")
                     Initialize.option('Try and talk to them.', 'SCREAM', 'Book it for the door')
-                    choice = 1#input('What is your choice? ')
+                    choice = input('What is your choice? ')
                     if choice == 1:
-                        print('You try and talk to them.... \n they all turn to look at you \n "Who are you guys?" \n They list their names')
+                        print('You try and talk to them.... \nThey all turn to look at you \nWho are you guys? \nThey list their names')
                         print("They all looked at each other and said")
                         idk = Initialize.getnames(self)
                         print(f'{idk[0]}, {idk[1]}, {idk[2]}, {idk[3]}')
                     elif choice == 2:
-                        pass
+                        print('You scream very loudy. The perciening sound makes them angry.')
+                        print('They throw something at you. You blackout.')
+
                     elif choice == 3:
-                        pass
+                        print('You book it for the door.')
+                        print('You make it, you rushed through the door knocking it down.')
+                        print('There are 3 more doors in front of you? Pick one to go through!')
+                        Initialize.option('Door 1', 'Door 2', 'Door 3')
+                        choice = input('What is your choice? ')
+                        if choice == 1:
+                            pass
+                        elif choice == 2:
+                            pass
+                        elif choice == 3:
+                            pass
                 elif choice == 2:
                     print("You jerk towards the voices. They are saying something about the 'expiriment'?")
                 elif choice == 3:

@@ -4,3 +4,5 @@ fix ther get phrases to make a 2d array for all the things.
 
 
 thinking thinking thinkgin OW
+
+if user does not enter an option that is diplyed make them go back and select naother one
