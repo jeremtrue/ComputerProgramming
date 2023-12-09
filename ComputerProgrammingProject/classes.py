@@ -147,11 +147,14 @@ class Game(Initialize):
                         Initialize.option('Door 1', 'Door 2', 'Door 3')
                         choice = input('What is your choice? ')
                         if choice == 1:
-                            pass
+                            self.die('You picked the wrong door.')
                         elif choice == 2:
-                            pass
+                            print('You rushed through the door.')
+                            print('You made it out!')
+                            print('But you trip on a rock and fall. ')
+                            print('JEREMY YOU NEED TO FIX THIS ASAP')
                         elif choice == 3:
-                            pass
+                            self.die('You picked the wrong door.')
                 elif choice == 2:
                     print("You jerk towards the voices. They are saying something about the 'expiriment'?")
                 elif choice == 3:
