@@ -2,11 +2,13 @@ import json
 import random as rand
 import time                                                                            
 class Initialize:
+    #Initalize the names and start the directions
     def __init__(self):
         # Instantiate the Game class
         self.name = self.getcharname()
         self.dirque()
 
+    #make the print dir function to automatically print directions out for you and ask if they understand
     def printdir(self):
         print('\nHow to play:')
         print('First, you would enter your name (you already did this)')
@@ -19,10 +21,12 @@ class Initialize:
         else:
             print('\nWell then, you see, I have no clue. Good luck!')
 
+    #this is used to ask for the characters name
     def getcharname(self):
         name = str(input("\nWhat is your Character's name? "))
         return name
 
+    #these are the starting situations (I currently only have one partially done)
     def getphrases():
         idk2 = [
             ['You awaken in a dark cave.', 'Get up and jump around with joy.', 'Get up cautiasly', 'Lay there in agony.', 1],
@@ -31,10 +35,12 @@ class Initialize:
             ]
         return rand.choice(idk2)
 
+    #gets names of enemies
     def getnames(self):
         idk1 = ['Gorlock The Destroyer', 'Bob the Destroyer', 'Totally Innocent Person', 'Gorrel the Giant']
         return idk1
 
+    #ask if the user if they need directions
     def dirque(self):
         firstque = input('\nDo you need instructions? y/n: ')
         time.sleep(0.5)
@@ -44,6 +50,7 @@ class Initialize:
             print('\nWell then, you see, I think you need them!')
             self.printdir()
     
+    #self explaninatory
     def agony(self, x):
             while x > 0:
                 print('\nthinking......')
@@ -67,21 +74,25 @@ class Initialize:
                 time.sleep((rand.randint(2,3)))
                 print('\now')
                 
-
-    def option(o1, o2, o3):
+    #option function so i dont have to print the whole option selection again
+    def option(self, o1, o2, o3):
+        choice = 0
         print('\nPick your move.')
         print(f'1\t{o1}')
         print(f'2\t{o2}')
         print(f'3\t{o3}\n')
-        def choice():
-            choice = input("What is your choice")
-            if choice == 1 or choice == 2 or choice == 3:
-                return choice
-            else:
-                print('uhhh please pick again')
-            
-        
-
+        def get_choice():
+                user_choice = input("What is your choice? ")
+                if user_choice in ('1', '2', '3'):
+                    return int(user_choice)
+                else:
+                    print('uhhh please pick again')
+                    return get_choice()
+        choice = get_choice()
+        return choice     
+           
+               
+    #parts of the story that arent included, these are like the sencond responses and situations. 
     def story(self, part):
         if part == 1.1:
             print('You jump around with joy, When all of a sudden.... You start to hear some voices in the distant. ')
@@ -104,29 +115,29 @@ class Initialize:
             print('You sit there in silence. A door bursts open and footsteps fill the silence. ')
 
 #time.sleep(1)
-
+#initializes and actually starts the game through the class
 class Game(Initialize):
     def __init__(self):
         self.gamestart()
 
+    #the die script
     def die(reason):
-        print('Uh Oh, you died. Thats unfortunates.')
-        print('What will we do now?')
+        print('Uh Oh, you died. Thats unfortunate.')
+        print('What will we do now??')
 
-    
+    #start the game
     def gamestart(self):
         # Starting the journey
         phrase = Initialize.getphrases()
         print(phrase[0])
         Player.level += 1
-        Initialize.option(phrase[1], phrase[2], phrase[3])
-        choice = int(input('What is your choice? '))
+        choice = Initialize.option(self, phrase[1], phrase[2], phrase[3])
         print("\n")
+        #start the story and all that. 
         if phrase[4] == 1:
             if choice == 1:
                 Initialize.story(self, 1.1)
-                Initialize.option('Get quite and hide.', 'Stay somewhat still and observe ', 'Start yelling at them to help you.')
-                choice = int(input('Whats your choice? ')) 
+                choice = Initialize.option(self, 'Get quite and hide.', 'Stay somewhat still and observe ', 'Start yelling at them to help you.')
                 if choice == 1:
                     print("\nYou get quite and hide. Unsure what to do next.\n They are looking around for you.")
                     Initialize.option('Try and talk to them.', 'SCREAM', 'Book it for the door')
@@ -162,7 +173,9 @@ class Game(Initialize):
             elif choice == 2:
                 Initialize.story(1.2)
             elif choice == 3:
-                Initialize.story(self, 1.3)
+                print('\n\nThey get really angry.')
+                print('They run towards you and they all start beating you up.')
+                self.die('you yelled at them')
         if phrase[4] == 2:
             if choice == 1:
                 Initialize.story(2.1)
