@@ -8,6 +8,11 @@ class Initialize:
         self.name = self.getcharname()
         self.dirque()
 
+        #the die script
+    def die(reason):
+        print('Uh Oh, you died. Thats unfortunate.')
+        print('What will we do now??')
+
     #make the print dir function to automatically print directions out for you and ask if they understand
     def printdir(self):
         print('\nHow to play:')
@@ -120,11 +125,6 @@ class Game(Initialize):
     def __init__(self):
         self.gamestart()
 
-    #the die script
-    def die(reason):
-        print('Uh Oh, you died. Thats unfortunate.')
-        print('What will we do now??')
-
     #start the game
     def gamestart(self):
         # Starting the journey
@@ -140,8 +140,7 @@ class Game(Initialize):
                 choice = Initialize.option(self, 'Get quite and hide.', 'Stay somewhat still and observe ', 'Start yelling at them to help you.')
                 if choice == 1:
                     print("\nYou get quite and hide. Unsure what to do next.\n They are looking around for you.")
-                    Initialize.option('Try and talk to them.', 'SCREAM', 'Book it for the door')
-                    choice = input('What is your choice? ')
+                    choice = Initialize.option(self, 'Try and talk to them.', 'SCREAM', 'Book it for the door')
                     if choice == 1:
                         print('You try and talk to them.... \nThey all turn to look at you \nWho are you guys? \nThey list their names')
                         print("They all looked at each other and said")
@@ -150,32 +149,38 @@ class Game(Initialize):
                     elif choice == 2:
                         print('You scream very loudy. The perciening sound makes them angry.')
                         print('They throw something at you. You blackout.')
+                        print('\n\nThey get really angry.')
+                        print('They run towards you and they all start beating you up.')
+                        print('\n\n You wake up again this time, thinking.')
+                        Initialize.agony(self, 1)
+                        Initialize.die('yelled')
 
                     elif choice == 3:
                         print('You book it for the door.')
                         print('You make it, you rushed through the door knocking it down.')
                         print('There are 3 more doors in front of you? Pick one to go through!')
-                        Initialize.option('Door 1', 'Door 2', 'Door 3')
-                        choice = input('What is your choice? ')
+                        choice = Initialize.option(self, 'Door 1', 'Door 2', 'Door 3')
                         if choice == 1:
-                            self.die('You picked the wrong door.')
+                            print('You picked the wrong door.')
+                            Initialize.die('You picked the wrong door.')
                         elif choice == 2:
                             print('You rushed through the door.')
                             print('You made it out!')
                             print('But you trip on a rock and fall. ')
-                            print('JEREMY YOU NEED TO FIX THIS ASAP')
+                            print('JEREREAAAMYYYYY FIX THIS (line 168)')
                         elif choice == 3:
-                            self.die('You picked the wrong door.')
+                            print('You picked the wrong door. ')
+                            Initialize.die('You picked the wrong door.')
                 elif choice == 2:
                     print("You jerk towards the voices. They are saying something about the 'expiriment'?")
                 elif choice == 3:
-                    print("3")
+                    print("You yell at them")
+                    print('They get angry and come in and kill you.')
+                    Initialize.die('yelled')
             elif choice == 2:
                 Initialize.story(1.2)
             elif choice == 3:
-                print('\n\nThey get really angry.')
-                print('They run towards you and they all start beating you up.')
-                self.die('you yelled at them')
+                Initialize.story(self, 1.3)
         if phrase[4] == 2:
             if choice == 1:
                 Initialize.story(2.1)
